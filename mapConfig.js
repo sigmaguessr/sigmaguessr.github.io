@@ -1,3 +1,24 @@
+// Location Picker
+const leafletMap = L.map("map", { zoomControl: false }).setView(
+  [51.505, -0.09],
+  3
+);
+
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 19,
+  zoomControl: false,
+}).addTo(leafletMap);
+
+
+
+
+
+// Results Screen
+
+let currentMarker;
+let currentLine;
+let currentResult;
+
 const resultsMap = L.map("result", { zoomControl: false }).setView(
   [51.505, -0.09],
   3
@@ -6,9 +27,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 19,
   zoomControl: false,
 }).addTo(resultsMap);
-let currentMarker;
-let currentLine;
-let currentResult;
+
 function showResults(data) {
   currentMarker = L.marker(currentCoords).addTo(resultsMap);
   currentResult = L.marker([secretLat, secretLng], { icon: greenIcon }).addTo(

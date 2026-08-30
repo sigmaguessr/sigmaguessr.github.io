@@ -3,46 +3,24 @@
   height: 100%;
   border: none;
 }
+
 body {
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
+/* Leaflet Maps */
 #map {
   /* position: absolute;
   bottom: 0;
   right: 0; */
-
+  cursor:crosshair;
   margin: 10px;
   border-radius: 10px;
   width: 100%;
   height: 100%;
   transition: 0.2s;
   opacity: 50%;
-}
-.resultsScreen {
-  visibility: hidden;
-  font-family: Montserrat;
-  vertical-align: center;
-  position: fixed;
-  top: 60vh;
-  padding-top: 30px;
-  left: 35vw;
-  z-index: 67;
-  text-align: center;
-  border-radius: 30px;
-  width: 30vw;
-  height: 15vh;
-  background-color: rgb(61, 149, 61);
-  background-color: rgb(63, 130, 0);
-  border-radius: 5px;
-  opacity: 80%;
-  background-color: rgb(63, 130, 0);
-  font-family: Montserrat;
-  border: none;
-  color: white;
-  font-weight: 700;
-  font-size: 15pt;
 }
 #result {
   visibility: hidden;
@@ -53,6 +31,78 @@ body {
   height: 100vh;
   z-index: 66;
 }
+
+/* Divs  (score and results) */
+.resultsScreen {
+  visibility: hidden;
+  font-family: Lexend;
+  vertical-align: center;
+  position: fixed;
+  top: 80vh;
+  left: 35vw;
+  padding-top: 15px;
+  z-index: 67;
+  text-align: center;
+  width: 30vw;
+  height: 17vh;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+  background-image: linear-gradient(to bottom,rgb(83, 149, 61,0.4),rgb(61, 149, 102,0.4));
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+  font-size: 15pt;
+}
+
+#nextButton{
+  font-family: Lexend;
+  z-index: 69;
+  text-align: center;
+  width: 7vw;
+  height: 5vh;
+  background-image: linear-gradient(to bottom,rgb(119, 142, 112),rgb(107, 138, 122));
+  border-radius: 5px;
+  opacity: 100%;
+  border: none;
+  color: white;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+  font-size: 15pt;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+#nextButton:hover{
+  transform: scale(1.05); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border:solid 2px white;
+}
+
+.score {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+  
+  font-family: Lexend;
+  vertical-align: center;
+  position: fixed;
+  top: 2vh;
+  padding-top: 30px;
+  left: 85vw;
+  z-index: 67;
+  text-align: center;
+  border-radius: 30px;
+  width: 13vw;
+  height: 7vh;
+  border-radius: 5px;
+  opacity: 80%;
+  background-image: linear-gradient(to top,rgb(83, 149, 61),rgb(61, 149, 102));
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 15pt;
+}
+/*containers*/
 .guessctnr {
   position: absolute;
   display: flex;
@@ -70,52 +120,30 @@ body {
   width: 50vw;
   height: 30vw;
 }
-.guessctnr:hover #guessbtn {
-  font-size: 30pt;
-}
+
 .guessctnr:hover #map {
   opacity: 100%;
 }
-.score {
-  font-family: Montserrat;
-  vertical-align: center;
-  position: fixed;
-  top: 2vh;
-  padding-top: 30px;
-  left: 85vw;
-  z-index: 67;
-  text-align: center;
-  border-radius: 30px;
-  width: 13vw;
-  height: 7vh;
-  background-color: rgb(61, 149, 61);
-  background-color: rgb(63, 130, 0);
-  border-radius: 5px;
-  opacity: 80%;
-  background-color: rgb(63, 130, 0);
-  font-family: Montserrat;
-  border: none;
-  color: white;
-  font-weight: 700;
-  font-size: 15pt;
-}
+
 #guessbtn {
-  background-color: rgb(63, 130, 0);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+  background-image: linear-gradient(to right,rgb(61, 149, 61),rgb(61, 149, 102));
   border-radius: 5px;
-  font-family: Montserrat;
+  font-family: Lexend;
   border: none;
   color: white;
   font-weight: 700;
   font-size: 15pt;
   padding: 10px;
-  height: 20%;
+  height: 6vh;
   width: 100%;
   margin: 0px;
   opacity: 100%;
   transition: 0.3s;
 }
-#guessbtn:hover: {
-  border: 10px solid white;
+#guessbtn:hover {
+  border: 2px solid white;
 }
 
 .mapctnr {
@@ -124,11 +152,4 @@ body {
   height: 115vh;
   width: 100vw;
   padding: none;
-}
-
-.montserrat-kye {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
 }
