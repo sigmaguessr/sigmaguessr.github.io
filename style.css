@@ -46,7 +46,6 @@ body {
   width: 30vw;
   height: 17vh;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-
   background-image: linear-gradient(to bottom,rgb(83, 149, 61,0.4),rgb(61, 149, 102,0.4));
   border-radius: 5px;
   border: none;

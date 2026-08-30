@@ -29,8 +29,10 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(resultsMap);
 
 function showResults(data) {
+    currentCoords = L.latLng(currentCoords[0],currentCoords[1]).wrap();
+    secretCoords= L.latLng(secretLat,secretLng).wrap();
   currentMarker = L.marker(currentCoords).addTo(resultsMap);
-  currentResult = L.marker([secretLat, secretLng], { icon: greenIcon }).addTo(
+  currentResult = L.marker(secretCoords, { icon: greenIcon }).addTo(
     resultsMap
   );
   currentLine = L.polyline([currentCoords, [secretLat, secretLng]], {
