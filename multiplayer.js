@@ -64,7 +64,6 @@ start, submit, chatMsg, end, join
             case ("SGRoom"):
                 if (!rooms.includes(message.id)){
                     rooms.push(message.id);
-                    alert("found room at: " + message.id +"\nHost ID is" + message.data.hostID + "\nYour ID is" + USER_ID)
                     }
                 break;
                 
