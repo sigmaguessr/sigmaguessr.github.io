@@ -1,6 +1,19 @@
 let score = 0;
 let mode = "guess";
 
+let gameMode = "singleplayer";
+
+// testMode = prompt("Enter Mode (s,m,h)")
+// if (testMode == "h"){
+// gameMode = "multiplayerHost"
+// } else if (testMode == "m"){
+//   gameMode = "multiplayer"
+
+// } else {
+//   mode = "singleplayer"
+// }
+
+
 let secretLat;
 let secretLng;
 let currentCoords = [0, 0];
@@ -8,14 +21,40 @@ let currentCoords = [0, 0];
 mapVisible = true;
 let marker;
 
+//getRandomLocation();
+// run on start
 
-getRandomLocation();
 
 
+
+function startGame(mode){
+    changeScreen(menuElements,gameElements);
+    getRandomLocation();
+
+  switch(mode){
+    case("s"):
+      break;
+    case("m"):
+      createRoom();
+      break;
+
+  }
+
+}
+function changeScreen(previousScreen,newScreen){
+  previousScreen.forEach(e =>{
+    e.style = "visibility:hidden";
+  }
+  )
+    newScreen.forEach(e =>{
+    e.style = "visibility:visible";
+  }
+  )
+  
+}
 function submitScore() {
   mode = "results";
-  resultElement.style = "visibility:visible";
-  resultScreen.style = "visibility:visible";
+  changeScreen(gameElements,resultsElements);
 
   data = calcScore(
     calcDist(
@@ -33,8 +72,7 @@ function submitScore() {
 
 function nextLocation() {
   mode = "guess";
-  resultElement.style = "visibility:hidden";
-  resultScreen.style = "visibility:hidden";
+  changeScreen(resultsElements,gameElements);
   currentCoords = null;
   currentMarker.remove();
   currentResult.remove();
@@ -74,5 +112,12 @@ function calcDist(lat1, lng1, lat2, lng2) {
           Math.cos(lat2 * (Math.PI / 180)) *
           Math.cos(lng2 * (Math.PI / 180) - lng1 * (Math.PI / 180))
     )
+  );
+}
+
+// Multiplayer functions
+function generateCode(){
+  return Math.floor(Math.random()*1000000).toString().padStart(6,"0"
+
   );
 }

@@ -20,15 +20,11 @@
     <script src="game.js"></script>
     <script src="index.js"></script>
 
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="multiplayer.js"> </script>
   </head>
   <body>
-    
-    <div class="resultsScreen" id="resultsScreen"> 
-      <p id="resultText"></p>
-<button onclick="nextLocation()" id="nextButton">Next</button>
-
-    </div>
-    <div class="result" id="result"> </div>
+        <!-- IN GAME -->
     <div class="score" id="score"> 0 Points</div>
     <div class=mapctnr>
     <iframe
@@ -46,6 +42,29 @@
     <div class="guessctnr">
 <div id="map" class="LocationPick"></div>
 <button onclick = "submitScore()" id="guessbtn">Guess</button>
+    </div>
+
+    <!-- RESULT SCREEN-->
+    <div class="resultsScreen" id="resultsScreen"> 
+      <p id="resultText"></p>
+<button onclick="nextLocation()" id="nextButton">Next</button>
+
+    </div>
+    <div class="result" id="result"> </div>
+
+
+    <!-- MENU-->
+     <div id="menuDiv">
+      <img class="menuBg" id="menuBg" src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Zm9yZXN0JTIwd2FsbHBhcGVyfGVufDB8fDB8fHww">
+      <div class="menuButtonBar">
+      <h1> Sigmaguessr</h1>
+
+
+      <button class="menuButton" onclick="startGame('s')"> Singleplayer</button>
+      <hr>
+      <button class="menuButton" onclick="startGame('h')"> Create Party</button>
+      <button class="menuButton" > Join Party</button>
+      </div>
     </div>
 <script src="mapConfig.js"></script>
 <script src="mapFunctions.js"> </script>
