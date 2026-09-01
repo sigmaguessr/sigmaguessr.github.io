@@ -1,5 +1,5 @@
 // var socket = io("https://sigma-server-six.vercel.app/", {
-var socket = io("https://sigma-server-six.vercel.app/", {
+var socket = io("http://localhost:3000", {
   transports: ["websocket"] 
 });
 const USER_ID = crypto.randomUUID();
@@ -12,7 +12,7 @@ function createRoom(){
     currentRoom = code;
     //alert(code)
     setInterval(() => {
-        socket.emit('SG Event',`
+        socket.emit('chat message',`
         {
         "user":"${USER_ID}",
         "id":"${currentRoom}",
@@ -24,13 +24,12 @@ function createRoom(){
                 }
         }   
             ` );
-
     }, 3000);
 }
 setInterval(testConnection,5000);
 
 function testConnection(){
-    socket.emit("SG Event",`
+    socket.emit("chat message",`
         {
         "user":"${USER_ID}",
         "id":"${currentRoom}",
@@ -54,13 +53,10 @@ start, submit, chatMsg, end, join
 
 
 */
-  socket.on('SG Event', function(msg) {
+
+  socket.on('chat message', function(msg) {
       message =  JSON.parse(msg)
-    alert("gotit")
-
-
             switch(message.type){
-
              case ("testConnection"):
                 break;
              case ("submit"):

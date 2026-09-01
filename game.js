@@ -28,15 +28,19 @@ let marker;
 
 
 function startGame(mode){
-    changeScreen(menuElements,gameElements);
-    getRandomLocation();
+
 
   switch(mode){
     case("s"):
+      changeScreen(menuElements,gameElements);
+      getRandomLocation();
       break;
-    case("m"):
+    case("h"):
       createRoom();
+      displayRoom();
+  
       break;
+
 
   }
 
@@ -69,7 +73,9 @@ function submitScore() {
   scoreElement.innerHTML = String(score) + " Points";
   resultText.innerText = `Your guess was ${data[0]} miles away \nYou got ${data[1]} points`;
 }
-
+function displayRoom(){
+  
+}
 function nextLocation() {
   mode = "guess";
   changeScreen(resultsElements,gameElements);

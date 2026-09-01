@@ -47,7 +47,7 @@ body {
   width: 30vw;
   height: 17vh;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  background-image: linear-gradient(to bottom,rgb(83, 149, 61,0.4),rgb(61, 149, 102,0.4));
+  background-image: linear-gradient(to bottom,rgba(108, 128, 101, 0.4),rgba(115, 148, 130, 0.4));
   border-radius: 5px;
   border: none;
   color: white;
@@ -96,7 +96,7 @@ body {
   height: 7vh;
   border-radius: 5px;
   opacity: 80%;
-  background-image: linear-gradient(to top,rgb(83, 149, 61),rgb(61, 149, 102));
+  background-image: linear-gradient(to top,rgb(154, 179, 146),rgb(138, 182, 159));
   border: none;
   color: white;
   font-weight: 700;
@@ -128,7 +128,7 @@ body {
 #guessbtn {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 
-  background-image: linear-gradient(to right,rgb(61, 149, 61),rgb(61, 149, 102));
+  background-image: linear-gradient(to right,rgb(137, 172, 137),rgb(152, 200, 175));
   border-radius: 5px;
   font-family: Lexend;
   border: none;
@@ -206,4 +206,37 @@ hr{
   border:none;
   margin-left:60px;
   width:100%;
+}
+.multiplayerPanel{
+  visibility: hidden;
+  font-family: Lexend;
+  vertical-align: center;
+  position: fixed;
+  top: 20vh;
+  left: 45vw;
+  padding-top: 15px;
+  z-index: 100;
+  text-align: center;
+  width: 40vw;
+  height: 50vh;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(to bottom,rgba(102, 127, 156, 0.168),rgba(160, 167, 163, 0.18));
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px 5px rgba(152, 197, 168, 0.207); 
+}
+.gameCode{
+font-size:100px;
+padding:0;
+margin:0;
+}
+.smallText{
+  font-size:20px;
+  margin:0;
+}
+.playerBox{
+  box-shadow: 0 0 15px 5px rgba(152, 197, 168, 0.207); 
 }
