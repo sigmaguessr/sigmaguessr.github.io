@@ -1,5 +1,5 @@
 // var socket = io("https://sigma-server-six.vercel.app/", {
-var socket = io("http://localhost:3000", {
+var socket = io("https://sigma-server-six.vercel.app/", {
   transports: ["websocket"] 
 });
 const USER_ID = crypto.randomUUID();
