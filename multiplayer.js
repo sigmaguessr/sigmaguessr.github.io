@@ -1,5 +1,5 @@
 // var socket = io("https://sigma-server-six.vercel.app/", {
-var socket = io("https://sigma-server-six.vercel.app/", {
+var socket = io("http://localhost:3000", {
   transports: ["websocket"] 
 });
 const USER_ID = crypto.randomUUID();
@@ -10,7 +10,6 @@ let currentRoom = "singleplayer"
 function createRoom(){
     code = generateCode()
     currentRoom = code;
-    //alert(code)
     setInterval(() => {
         socket.emit('chat message',`
         {
@@ -55,6 +54,7 @@ start, submit, chatMsg, end, join
 */
 
   socket.on('chat message', function(msg) {
+    console.log(msg);
       message =  JSON.parse(msg)
             switch(message.type){
              case ("testConnection"):

@@ -23,6 +23,8 @@ resultsMapElement = document.getElementById("result");
 mainMapElement = document.getElementById("MainMap");
 menuDivElement = document.getElementById("menuDiv");
 menuButtonBarElement =  document.getElementById("menuButtonBar");
+gameCodeElement =  document.getElementById("gameCode");
+multiplayerPanelElement =  document.getElementById("multiplayerPanel");
 
 menuElements = [menuBg,menuDiv];
 resultsElements = [scoreElement,resultElement,resultsScreen,resultsMapElement];

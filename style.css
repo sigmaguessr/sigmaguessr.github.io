@@ -212,7 +212,7 @@ hr{
   font-family: Lexend;
   vertical-align: center;
   position: fixed;
-  top: 20vh;
+  top: 25vh;
   left: 45vw;
   padding-top: 15px;
   z-index: 100;
@@ -227,7 +227,14 @@ hr{
   font-weight: 700;
   backdrop-filter: blur(10px);
   box-shadow: 0 0 15px 5px rgba(152, 197, 168, 0.207); 
+
+  
 }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .gameCode{
 font-size:100px;
 padding:0;

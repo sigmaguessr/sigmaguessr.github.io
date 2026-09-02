@@ -74,7 +74,8 @@ function submitScore() {
   resultText.innerText = `Your guess was ${data[0]} miles away \nYou got ${data[1]} points`;
 }
 function displayRoom(){
-  
+  multiplayerPanelElement.style = "visibility:visible;  animation: fadeIn 0.2s ease-in-out forwards;";
+  gameCodeElement.innerHTML = currentRoom;
 }
 function nextLocation() {
   mode = "guess";
